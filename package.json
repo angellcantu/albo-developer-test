@@ -1,0 +1,44 @@
+{
+  "name": "albo-developer-test",
+  "version": "0.0.1",
+  "description": "Albo Developer Test - Jose Cantu",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --runInBand --force-exit --testTimeout=20000",
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angellcantu/albo-developer-test.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "api",
+    "mongodb",
+    "marvel"
+  ],
+  "author": "Jose Angel Cantu Alcocer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angellcantu/albo-developer-test/issues"
+  },
+  "homepage": "https://github.com/angellcantu/albo-developer-test#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "supertest": "^6.3.3"
+  }
+}
