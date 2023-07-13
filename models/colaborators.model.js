@@ -1,6 +1,6 @@
 'use strict';
 
-const { collaborators: schema } = require('./schemas');
+const { colaborators: schema } = require('./schemas');
 
 schema.statics.saveInformation = function({ information, creators }) {
     let to_save = {
@@ -45,4 +45,4 @@ schema.statics.saveInformation = function({ information, creators }) {
     .catch(err => { throw err });
 }
 
-module.exports = _mongoose.albo_test_developer.model('collaborators', schema);
+module.exports = _mongoose.albo_test_developer.model('colaborators', schema);

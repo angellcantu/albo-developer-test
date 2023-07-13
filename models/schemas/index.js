@@ -1,9 +1,9 @@
 'use strict';
 
-const collaborators = require('./collaborators.schema');
+const colaborators = require('./colaborators.schema');
 const characters = require('./characters.schema');
 
 module.exports = {
-    collaborators,
+    colaborators,
     characters
 };

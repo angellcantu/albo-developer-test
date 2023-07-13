@@ -1,12 +1,12 @@
 'use strict';
 
-const { collaborators, characters } = require('../models');
+const { colaborators, characters } = require('../models');
 const { marvel } = require('../services');
 const Promise = require('bluebird');
 
 class MarvelController {
 
-    async collaborators(req, res, next) {
+    async colaborators(req, res, next) {
         try {
 			let { name } = req.params;
 			let information = await marvel.heroeInformation(name);
@@ -14,7 +14,7 @@ class MarvelController {
 				throw new NotFoundError(`No results found with: ${name}`);
 			}
 			let creators = await marvel.heoreComics(information.data.data.results[0].id);
-			return collaborators.saveInformation({ information, creators })
+			return colaborators.saveInformation({ information, creators })
 			.then(doc => res.json(doc))
 			.catch(err => { throw err; });
 		} catch(err) {
@@ -51,12 +51,13 @@ class MarvelController {
 
 			return characters.saveInformation(to_save)
 			.then(doc => {
-				collaborators.findOne({ name: new RegExp(name, 'i') })
+				colaborators.findOne({ name: new RegExp(name, 'i') })
 				.then(_doc => {
 					if (_doc) {
 						characters.updateColaborator(_information.id, _doc);
 					}
-				});
+				})
+				.catch(err => { throw err; });
 				return res.json(doc);
 			})
 			.catch(err => { throw err; });
