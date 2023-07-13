@@ -1,9 +1,9 @@
 'use strict';
 
-const collaborators = require('./collaborators.model');
+const colaborators = require('./colaborators.model');
 const characters = require('./characters.model');
 
 module.exports = {
-    collaborators,
+    colaborators,
     characters
 };
