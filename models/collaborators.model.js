@@ -2,7 +2,7 @@
 
 const { collaborators: schema } = require('./schemas');
 
-schema.statics.saveInformation = function({ name, information, creators }) {
+schema.statics.saveInformation = function({ information, creators }) {
     let to_save = {
         last_sync: new Date(),
         editors: [],
